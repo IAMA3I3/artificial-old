@@ -11,7 +11,10 @@
   }
   .scrollbar::-webkit-scrollbar,
   html::-webkit-scrollbar {
-    @apply w-2 bg-gray-400
+    @apply w-2 bg-gray-400 h-2
+  }
+  .small-scrollbar.scrollbar::-webkit-scrollbar {
+    @apply w-1 h-1
   }
   .scrollbar::-webkit-scrollbar {
     @apply rounded-full
@@ -23,10 +26,48 @@
   .card {
     @apply shadow-lg p-5 md:p-8 rounded-md border border-slate-300 dark:border-slate-500
   }
+  textarea,
   input {
-    @apply py-1 px-3 bg-transparent rounded-md border-2 border-gray-400 outline-none focus:border-gray-600
+    @apply py-1 px-3 bg-transparent rounded-md border-2 border-gray-400 dark:border-white/50 dark:focus:border-white outline-none focus:border-gray-600 resize-none
   }
+  textarea {
+    @apply h-40 scrollbar small-scrollbar
+  }
+  .btn,
   button {
     @apply  px-4 py-2 uppercase tracking-wide rounded-md active:scale-95
+  }
+  #menu-ic {
+    @apply *:w-8 *:h-1 /* *:bg-black/70 */ dark:*:bg-white *:rounded-full *:my-1 inline-block opacity-100 cursor-pointer
+  }
+  .open #menu-ic {
+    @apply even:*:opacity-0 first:*:rotate-[405deg] last:*:-rotate-[405deg] first:*:translate-y-2 last:*:-translate-y-2 *:bg-white
+  }
+  #navbar {
+    @apply py-8
+  }
+  #navbar.pin {
+    @apply py-1 bg-white/95 shadow-md dark:bg-slate-900/95
+  }
+  .open#navbar {
+    @apply backdrop-blur-sm shadow bg-slate-800/80 text-white
+  }
+  .nav-links {
+    @apply max-h-0 overflow-hidden md:max-h-screen text-white md:text-gray-700 md:dark:text-white
+  }
+  .open .nav-links {
+    @apply max-h-screen
+  }
+  .art-item {
+    @apply hidden
+  }
+  .art-item.show {
+    @apply block
+  }
+  #sent {
+    @apply -top-12
+  }
+  .show#sent {
+    @apply top-12
   }
 }
