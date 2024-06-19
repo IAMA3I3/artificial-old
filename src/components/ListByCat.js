@@ -8,7 +8,7 @@ const ListByCat = () => {
     const [arts, setArts] = useState([])
 
     const getArts = () => {
-        axios.get('http://localhost:80/artificial-api/art/get')
+        axios.get('https://artificial-api.000webhostapp.com/art/get')
             .then((response) => {
                 // console.log(response.data)
                 if (response.data.success) {
